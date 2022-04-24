@@ -1,4 +1,4 @@
-const userModel = require('../userModel')
+const User = require('../User')
 const userList = require('./user.json')
 
 const mongoose = require('mongoose')
@@ -17,7 +17,7 @@ db.once('open', () => {
   console.log('mongodb connected!')
 
   user_list.forEach(user => {
-    userModel.create({
+    User.create({
       firstName: user.firstName,
       email: user.email,
       password: user.password
